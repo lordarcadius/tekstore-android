@@ -1,4 +1,4 @@
-package com.codebreakers.healthinc;
+package com.codebreakers.tekstore;
 
 import org.junit.Test;
 
