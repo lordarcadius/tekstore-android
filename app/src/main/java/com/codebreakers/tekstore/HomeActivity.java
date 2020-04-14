@@ -38,7 +38,6 @@ public class HomeActivity extends AppCompatActivity {
                     switch (item.getItemId()) {
                         case R.id.nav_ar:
                             selectedFragment = new ARFragment();
-
                             break;
                         case R.id.nav_search:
                             selectedFragment = new ProductFragment();
