@@ -19,7 +19,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:fontFamily="@font/regular"
-        android:textColor="#1e88e5"
-        android:textSize="18sp"/>
+        android:textColor="#20497f"
+        android:textSize="16sp"/>
 
 </LinearLayout>

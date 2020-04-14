@@ -11,8 +11,9 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="370dp"
-        android:alpha="0.7"
-        android:background="@drawable/n"
+        android:scaleType="fitCenter"
+        android:alpha="0.6"
+        android:background="@drawable/header"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,13 +26,13 @@
         android:fontFamily="@font/bold"
         android:text="The TekStore"
         android:textColor="#fff"
-        android:textSize="40sp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.632" />
+        app:layout_constraintVertical_bias="0.505" />
 
     <TextView
         android:id="@+id/tekStoreSloganTextView"
@@ -40,13 +41,13 @@
         android:fontFamily="@font/regular"
         android:text="Your one stop tech destination!"
         android:textColor="#fff"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.779" />
+        app:layout_constraintVertical_bias="0.64" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -93,7 +94,7 @@
                         app:dotsSize="8dp"
                         app:dotsSpacing="5dp"
                         app:progressMode="true"
-                        app:selectedDotColor="#1976d2" />
+                        app:selectedDotColor="#20497f" />
                 </LinearLayout>
 
 
@@ -166,7 +167,7 @@
                                     android:fontFamily="@font/bold"
                                     android:text="LOGIN"
                                     android:textAlignment="center"
-                                    android:textColor="#1e88e5"
+                                    android:textColor="#20497f"
                                     android:textSize="16sp" />
                             </RelativeLayout>
                         </FrameLayout>
