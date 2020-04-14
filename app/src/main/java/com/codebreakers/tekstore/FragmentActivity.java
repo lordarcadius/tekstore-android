@@ -1,85 +1,53 @@
-package com.codebreakers.tekstore.Fragments;
-
-
+package com.codebreakers.tekstore;
 
 import android.os.Build;
 import android.os.Bundle;
-
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.codebreakers.tekstore.R;
 import com.google.ar.core.Anchor;
 import com.google.ar.sceneform.AnchorNode;
-import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.rendering.ViewRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
-import com.google.ar.sceneform.ux.TransformableNode;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
-
-public class ARFragment extends Fragment {
+public class FragmentActivity extends AppCompatActivity {
     private ArFragment arFragment;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_ar,container,false);
-        arFragment= (ArFragment) getChildFragmentManager().findFragmentById(R.id.fragment);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_fragment);
+        arFragment= (ArFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
 
         assert arFragment != null;
         arFragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
             createViewRenderable(hitResult.createAnchor());
-            Anchor anchor =hitResult.createAnchor();
-
-//            ModelRenderable.builder()
-//                    .setSource(getContext(), Uri.parse("skyscraper.sfb"))
-//                    .build()
-//                    .thenAccept(modelRenderable -> addModeltoScene(anchor,modelRenderable))
-//                    .exceptionally(throwable -> {
-//                        AlertDialog.Builder builder =new AlertDialog.Builder(getContext());
-//                        builder.setMessage(throwable.getMessage()).show();
-//                    return null;
-//                    });
         });
-
-        return view;
     }
-    private void addModeltoScene(Anchor anchor, ModelRenderable modelRenderable)
+
+
+    private void createViewRenderable(Anchor anchor)
     {
-        AnchorNode anchorNode=new AnchorNode( anchor);
-        TransformableNode transformableNode=new TransformableNode(arFragment.getTransformationSystem());
-        transformableNode.setParent(anchorNode);
-        transformableNode.setRenderable(modelRenderable);
-        arFragment.getArSceneView().getScene().addChild(anchorNode);
-        transformableNode.select();
-    }
-
-    private void createViewRenderable(Anchor anchor) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ViewRenderable
                     .builder()
-                    .setView(getContext(), R.layout.text)
+                    .setView(this,R.layout.text)
                     .build()
-                    .thenAccept(new Consumer<ViewRenderable>() {
-                        @Override
-                        public void accept(ViewRenderable viewRenderable) {
-                            ARFragment.this.addtoScene(viewRenderable, anchor);
-                        }
+                    .thenAccept(viewRenderable -> {
+                        addtoScene(viewRenderable,anchor);
                     });
         }
     }
+
     private void addtoScene(ViewRenderable viewRenderable, Anchor anchor)
     {
         AnchorNode anchorNode=new AnchorNode(anchor);
@@ -97,7 +65,7 @@ public class ARFragment extends Fragment {
 
 
     }
-    class Adapter extends PagerAdapter
+    private class Adapter extends PagerAdapter
     {
         List<Integer> images;
         Adapter(List<Integer>images)
