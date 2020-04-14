@@ -5,6 +5,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     DotsIndicator dotsIndicator;
     ViewAdapter viewAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
         viewAdapter = new ViewAdapter(this);
         viewPager.setAdapter(viewAdapter);
         dotsIndicator.setViewPager(viewPager);
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);    }
+    }
+    public void openLogin(View view){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void openSignup(View view){
+        Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
+    }
+
 }
