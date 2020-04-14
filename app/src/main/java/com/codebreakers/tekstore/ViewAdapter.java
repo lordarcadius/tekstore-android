@@ -35,6 +35,7 @@ class ViewAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         layoutInflater = (LayoutInflater) context.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
+        assert layoutInflater != null;
         View view = layoutInflater.inflate(R.layout.item, null);
         ImageView imageView = view.findViewById(R.id.image_View);
         TextView textView = view.findViewById(R.id.text_view);
