@@ -28,7 +28,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:src="@drawable/laptop"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:padding="10dp"/>
         </androidx.cardview.widget.CardView>
 
         <LinearLayout

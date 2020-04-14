@@ -60,7 +60,7 @@
         app:itemIconTint="@color/bottom_nav_color"
         app:itemIconSize="25dp"
         app:labelVisibilityMode="labeled"
-        android:background="#6100ED"
+        android:background="#20497f"
         app:menu="@menu/menu_navigation_home"
 
         />
