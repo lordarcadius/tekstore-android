@@ -1,4 +1,6 @@
 package com.codebreakers.tekstore.Fragments;
 
-public class ARFragment {
+import androidx.fragment.app.Fragment;
+
+public class ARFragment extends Fragment {
 }

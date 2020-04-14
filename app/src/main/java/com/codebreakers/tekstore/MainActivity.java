@@ -3,6 +3,7 @@ package com.codebreakers.tekstore;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
 
@@ -24,5 +25,6 @@ public class MainActivity extends AppCompatActivity {
         viewAdapter = new ViewAdapter(this);
         viewPager.setAdapter(viewAdapter);
         dotsIndicator.setViewPager(viewPager);
-    }
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);    }
 }
