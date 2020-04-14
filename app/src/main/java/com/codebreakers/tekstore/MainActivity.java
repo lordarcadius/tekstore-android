@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
         dotsIndicator.setViewPager(viewPager);
     }
     public void openLogin(View view){
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }
 
     public void openSignup(View view){
-        Intent intent = new Intent(this, SignupActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }
 

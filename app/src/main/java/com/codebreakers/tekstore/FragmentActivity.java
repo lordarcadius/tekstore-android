@@ -56,7 +56,7 @@ public class FragmentActivity extends AppCompatActivity {
         View view=viewRenderable.getView();
         ViewPager viewPager=view.findViewById(R.id.viewPager);
         List<Integer> images =new ArrayList<>();
-        images.add(R.drawable.ic_avatar);
+        images.add(R.drawable.ic_metalmarious_laptop);
 
 
 
